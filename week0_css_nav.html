@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 30px;
+            font-weight: bold;
+            border: 3px solid black;
+            border-radius: 35px;
+            margin: 30px 20px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .menu__catFriendsText {
+            color: gray;
+        }
+
+        .menu__alertText {
+            margin-left: 20px;
+            color: tomato
+        }
+
+        .menu__lenguage {
+            height: 35px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 50px;
+            padding: 0px 10px;
+            margin-left: 20px;
+        }
+
+        .menu_buttons_KOButton,
+        .menu_buttons_ENButton {
+            /* background-color: tomato; */
+            align-items: center;
+            width: 40px;
+            height: 20px;
+            border: 2px solid black;
+            border-radius: 50px;
+            margin-left: 10px;
+            font-size: 10px;
+            padding-top: 2px;
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .menu__catFriendsText,
+            .menu__alertText {
+                display: none;
+            }
+        }
+
+        /* .menu_buttons_ENButton {
+            background-color: white;
+            color: black;
+        } */
+        /* 
+
+        .menu_buttons_ENButton button.active {
+            background-color: tomato;
+            color: white;
+        } */
+
+        .buttons button {
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .buttons button.active {
+            background-color: tomato;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <img src="cat.png" style="margin-right: 10px; width: 40px; height: 40px;">
+        <p style="font-size: 20px;">Aido</p>
+        <div class="menu">
+            <p class="menu__catFriendsText">고양이 친구들</p>
+            <p class="menu__alertText">출시 알림 받기</p>
+            <div class="menu__lenguage">
+                <p style="font-size: 10px; color: gray;">언어</p>
+                <div class="buttons">
+                    <button type="button" class="menu_buttons_KOButton" value="KO">
+                        KO
+                    </button>
+                    <button type="button" class="menu_buttons_ENButton active" value="EN">
+                        EN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+<script>
+    const koBtn = document.querySelector(".menu_buttons_KOButton");
+    const enBtn = document.querySelector(".menu_buttons_ENButton");
+
+    koBtn.addEventListener("click", function () {
+        koBtn.classList.add("active");
+        enBtn.classList.remove("active");
+    });
+    enBtn.addEventListener("click", function () {
+        enBtn.classList.add("active");
+        koBtn.classList.remove("active");
+    });
+</script>
+
+</html>
